@@ -1960,6 +1960,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrangeCat
       objectReference: {fileID: 0}
+    - target: {fileID: 2362656672091713248, guid: d89fbd189531c4c55b66f4cda50ca0dc, type: 3}
+      propertyPath: m_TagString
+      value: Cat
+      objectReference: {fileID: 0}
     - target: {fileID: 5114958994518884748, guid: d89fbd189531c4c55b66f4cda50ca0dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.01
