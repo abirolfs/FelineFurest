@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Tool : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class Tool : MonoBehaviour
     [SerializeField] BoxCollider2D toolCollider;
     [SerializeField] BoxCollider2D squareCollider;
     [SerializeField] BoxCollider2D catCollider;
+
+    [SerializeField] TextMeshProUGUI progressText;
 
     //Bounds toolBounds;
     //Bounds squareBounds;
@@ -40,10 +43,6 @@ public class Tool : MonoBehaviour
         {
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             transform.position = new Vector3(mousePosition.x, mousePosition.y, zPosition);
-        }
-        else
-        {
-
         }
 
     }
@@ -72,6 +71,14 @@ public class Tool : MonoBehaviour
             {
                 Debug.Log("Used tool on cat!");
                 toolUseCount++;
+                //if (toolUseCount < 5)
+                //{
+                //    toolUseCount++;
+                //}
+                if (toolUseCount == 5)
+                {
+                    progressText.text = "100% Complete";
+                }
             }
 
         }
