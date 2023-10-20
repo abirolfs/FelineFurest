@@ -2161,6 +2161,12 @@ MonoBehaviour:
   waterBucket: {fileID: 2097255542}
   shampooBottle: {fileID: 731149667}
   towel: {fileID: 1003315381}
+  isWashDone: 0
+  isShampooDone: 0
+  isStep1Done: 0
+  isTowelDone: 0
+  isGroomDone: 0
+  isStep2Done: 0
 --- !u!4 &1743260311
 Transform:
   m_ObjectHideFlags: 0
@@ -2606,6 +2612,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 345477145}
     - target: {fileID: 7474463103671317128, guid: eeba5a78e2b0f4627aa79f846b540781, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1743260310}
+    - target: {fileID: 7474463103671317128, guid: eeba5a78e2b0f4627aa79f846b540781, type: 3}
       propertyPath: progressText
       value: 
       objectReference: {fileID: 508947470}
@@ -2684,6 +2694,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 789238017}
     - target: {fileID: 1019224162153096355, guid: ea07a91380ce14883bdd54e2c57c9f72, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1743260310}
+    - target: {fileID: 1019224162153096355, guid: ea07a91380ce14883bdd54e2c57c9f72, type: 3}
       propertyPath: progressText
       value: 
       objectReference: {fileID: 1563428381}
@@ -2730,10 +2744,6 @@ PrefabInstance:
     - target: {fileID: 3565343644115700685, guid: ea07a91380ce14883bdd54e2c57c9f72, type: 3}
       propertyPath: m_Name
       value: WaterBucket
-      objectReference: {fileID: 0}
-    - target: {fileID: 3565343644115700685, guid: ea07a91380ce14883bdd54e2c57c9f72, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2792,6 +2802,10 @@ PrefabInstance:
       propertyPath: toolSquare
       value: 
       objectReference: {fileID: 789238017}
+    - target: {fileID: 5338787183496290145, guid: 4ffd503b1d9eb4204bdbb8e9f3d020e5, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1743260310}
     - target: {fileID: 6496920779164432420, guid: 4ffd503b1d9eb4204bdbb8e9f3d020e5, type: 3}
       propertyPath: m_Name
       value: Towel

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1019224162153096355}
   m_Layer: 0
   m_Name: WaterBucket
-  m_TagString: Untagged
+  m_TagString: WaterBucket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,5 +143,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04952b9e515d84e35895a488b9fb3f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  toolUseCount: 0
   isPickedUp: 0
   zPosition: -1.5
+  toolSquare: {fileID: 0}
+  cat: {fileID: 0}
+  toolCollider: {fileID: 0}
+  squareCollider: {fileID: 0}
+  catCollider: {fileID: 0}
+  progressText: {fileID: 0}
+  isWashDone: 0
+  isShampooDone: 0
+  isStep1Done: 0
+  isTowelDone: 0
+  isGroomDone: 0
+  isStep2Done: 0

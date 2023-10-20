@@ -13,6 +13,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject shampooBottle;
     [SerializeField] GameObject towel;
 
+    [SerializeField] bool isWashDone = false;
+    [SerializeField] bool isShampooDone = false;
+    public bool isStep1Done = false;
+
+    [SerializeField] bool isTowelDone = false;
+    [SerializeField] bool isGroomDone = false;
+    public bool isStep2Done = false;
+
     //[SerializeField] GameObject backButton;
     //[SerializeField] GameObject nextButton;
 
@@ -27,6 +35,39 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetProgress(string tool, bool progress)
+    {
+        if(tool == "WaterBucket")
+        {
+            isWashDone = progress;
+        }
+        else if (tool == "ShampooBottle")
+        {
+            isShampooDone = progress;
+        }
+        else if (tool == "Towel")
+        {
+            isTowelDone = progress;
+        }
+    }
+
+    public bool CheckIfCanProceed(string tool)
+    {
+        if (tool == "WaterBucket")
+        {
+            return true;
+        }
+        else if (tool == "ShampooBottle" && isWashDone)
+        {
+            return true;
+        }
+        //IMPLEMENT LOGIC FOR STEP 2 HERE
+        else
+        {
+            return false;
+        }
     }
 
     public void GoToNextStep()

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cat
+  - WaterBucket
+  - ShampooBottle
+  - Towel
   layers:
   - Default
   - TransparentFX

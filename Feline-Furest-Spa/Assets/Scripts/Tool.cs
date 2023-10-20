@@ -8,7 +8,6 @@ public class Tool : MonoBehaviour
     [SerializeField] int toolUseCount = 0;
 
     [SerializeField] bool isPickedUp = false;
-    //[SerializeField] bool isInSquare = true;
 
     [SerializeField] float zPosition = -1.5f;
 
@@ -19,6 +18,8 @@ public class Tool : MonoBehaviour
     [SerializeField] BoxCollider2D catCollider;
 
     [SerializeField] TextMeshProUGUI progressText;
+
+    [SerializeField] GameManager gameManager;
 
     //Bounds toolBounds;
     //Bounds squareBounds;
@@ -70,17 +71,30 @@ public class Tool : MonoBehaviour
             if (catCollider.bounds.Contains(new Vector3(mousePosition.x, mousePosition.y, cat.transform.position.z)))
             {
                 Debug.Log("Used tool on cat!");
-                toolUseCount++;
-                //if (toolUseCount < 5)
-                //{
-                //    toolUseCount++;
-                //}
+                if (gameManager.CheckIfCanProceed(this.tag))
+                {
+                    toolUseCount++;
+                }
                 if (toolUseCount == 5)
                 {
                     progressText.text = "100% Complete";
+                    if (this.tag == "WaterBucket")
+                    {
+                        gameManager.SetProgress("WaterBucket", true);
+                    }
+                    else if (this.tag == "ShampooBottle")
+                    {
+                        gameManager.SetProgress("ShampooBottle", true);
+                    }
+                    else if (this.tag == "Towel")
+                    {
+                        gameManager.SetProgress("Towel", true);
+                    }
                 }
             }
 
         }
     }
+
+    
 }
