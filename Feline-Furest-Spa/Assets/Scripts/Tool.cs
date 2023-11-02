@@ -19,6 +19,8 @@ public class Tool : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI progressText;
     [SerializeField] TextMeshProUGUI currStepCompleteText;
+    [SerializeField] TextMeshProUGUI gameCompleteText;
+    [SerializeField] GameObject playAgainButton;
 
     [SerializeField] GameManager gameManager;
 
@@ -34,6 +36,8 @@ public class Tool : MonoBehaviour
         catCollider = cat.GetComponent<BoxCollider2D>();
 
         currStepCompleteText.enabled = false;
+        gameCompleteText.enabled = false;
+        playAgainButton.SetActive(false);
 
         //toolBounds = toolCollider.bounds;
         //toolBounds.extents += 10;
@@ -98,7 +102,8 @@ public class Tool : MonoBehaviour
                     {
                         gameManager.SetProgress("Flower", true);
                         StartCoroutine(ShowAndHideText(currStepCompleteText, 3.0f));
-                        //activate game finished text here
+                        gameCompleteText.enabled = true;
+                        playAgainButton.SetActive(true);
                     }
                 }
             }
