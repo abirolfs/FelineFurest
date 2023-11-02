@@ -18,6 +18,7 @@ public class Tool : MonoBehaviour
     [SerializeField] BoxCollider2D catCollider;
 
     [SerializeField] TextMeshProUGUI progressText;
+    [SerializeField] TextMeshProUGUI currStepCompleteText;
 
     [SerializeField] GameManager gameManager;
 
@@ -31,6 +32,8 @@ public class Tool : MonoBehaviour
         squareCollider = toolSquare.GetComponent<BoxCollider2D>();
         cat = GameObject.FindGameObjectWithTag("Cat");
         catCollider = cat.GetComponent<BoxCollider2D>();
+
+        currStepCompleteText.enabled = false;
 
         //toolBounds = toolCollider.bounds;
         //toolBounds.extents += 10;
@@ -85,6 +88,7 @@ public class Tool : MonoBehaviour
                     else if (this.tag == "ShampooBottle")
                     {
                         gameManager.SetProgress("ShampooBottle", true);
+                        StartCoroutine(ShowAndHideText(currStepCompleteText, 3.0f));
                     }
                     else if (this.tag == "Towel")
                     {
@@ -93,6 +97,8 @@ public class Tool : MonoBehaviour
                     else if (this.tag == "Flower")
                     {
                         gameManager.SetProgress("Flower", true);
+                        StartCoroutine(ShowAndHideText(currStepCompleteText, 3.0f));
+                        //activate game finished text here
                     }
                 }
             }
@@ -100,5 +106,12 @@ public class Tool : MonoBehaviour
         }
     }
 
-    
+    IEnumerator ShowAndHideText(TextMeshProUGUI text, float time)
+    {
+        text.enabled = true;
+        yield return new WaitForSeconds(time);
+        text.enabled = false;
+    }
+
+
 }
