@@ -8,6 +8,7 @@ TagManager:
   - WaterBucket
   - ShampooBottle
   - Towel
+  - Flower
   layers:
   - Default
   - TransparentFX

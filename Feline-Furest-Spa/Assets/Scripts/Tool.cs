@@ -90,6 +90,10 @@ public class Tool : MonoBehaviour
                     {
                         gameManager.SetProgress("Towel", true);
                     }
+                    else if (this.tag == "Flower")
+                    {
+                        gameManager.SetProgress("Flower", true);
+                    }
                 }
             }
 
