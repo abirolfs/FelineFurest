@@ -82,7 +82,9 @@ public class Tool : MonoBehaviour
                 {
                     toolUseCount++;
                 }
-                if (toolUseCount == 5)
+
+                //implement logic for each tool use here
+                if (toolUseCount == 4)
                 {
                     progressText.text = "100% Complete";
                     if (this.tag == "WaterBucket")
