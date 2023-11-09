@@ -22,6 +22,7 @@ public class Tool : MonoBehaviour
     [SerializeField] GameObject greenBar;
     [SerializeField] TextMeshProUGUI currStepCompleteText;
     [SerializeField] TextMeshProUGUI gameCompleteText;
+    [SerializeField] GameObject gameCompleteBkg;
     [SerializeField] GameObject playAgainButton;
 
     [SerializeField] GameManager gameManager;
@@ -39,6 +40,7 @@ public class Tool : MonoBehaviour
 
         currStepCompleteText.enabled = false;
         gameCompleteText.enabled = false;
+        gameCompleteBkg.SetActive(false);
         playAgainButton.SetActive(false);
 
         //greenBar.SetActive(false);
@@ -130,6 +132,7 @@ public class Tool : MonoBehaviour
                         gameManager.SetProgress("Flower", true);
                         StartCoroutine(ShowAndHideText(currStepCompleteText, 3.0f));
                         gameCompleteText.enabled = true;
+                        gameCompleteBkg.SetActive(true);
                         playAgainButton.SetActive(true);
                     }
                 }
