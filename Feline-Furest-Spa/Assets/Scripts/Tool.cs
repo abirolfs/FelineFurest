@@ -41,7 +41,7 @@ public class Tool : MonoBehaviour
         gameCompleteText.enabled = false;
         playAgainButton.SetActive(false);
 
-        greenBar.SetActive(false);
+        //greenBar.SetActive(false);
 
         //toolBounds = toolCollider.bounds;
         //toolBounds.extents += 10;
@@ -90,7 +90,9 @@ public class Tool : MonoBehaviour
                 //implement logic for each tool use here
                 if (toolUseCount == 1)
                 {
-                    greenBar.SetActive(true);
+                    //have to change the setactive to just setting the scale, then make scale 0 in start
+                    greenBar.transform.localScale += new Vector3(greenBarScaleX, 0, 0);
+                    greenBar.transform.position += new Vector3(greenBarScaleX - 0.05f, 0, 0);
                     progressText.text = "25% Complete";
                 }
                 else if (toolUseCount == 2)

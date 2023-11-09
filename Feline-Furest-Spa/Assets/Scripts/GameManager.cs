@@ -27,9 +27,17 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI tool2Text;
 
     [SerializeField] TextMeshProUGUI washProgressText;
+    [SerializeField] GameObject washProgressBar;
+    [SerializeField] GameObject washGreenBar;
     [SerializeField] TextMeshProUGUI shampooProgressText;
+    [SerializeField] GameObject shampooProgressBar;
+    [SerializeField] GameObject shampooGreenBar;
     [SerializeField] TextMeshProUGUI towelProgressText;
+    [SerializeField] GameObject towelProgressBar;
+    [SerializeField] GameObject towelGreenBar;
     [SerializeField] TextMeshProUGUI groomProgressText;
+    [SerializeField] GameObject groomProgressBar;
+    [SerializeField] GameObject groomGreenBar;
 
     //[SerializeField] GameObject backButton;
     //[SerializeField] GameObject nextButton;
@@ -43,6 +51,11 @@ public class GameManager : MonoBehaviour
 
         towelProgressText.enabled = false;
         groomProgressText.enabled = false;
+
+        towelProgressBar.SetActive(false);
+        towelGreenBar.SetActive(false);
+        groomProgressBar.SetActive(false);
+        groomGreenBar.SetActive(false);
     }
 
     // Update is called once per frame
@@ -116,6 +129,16 @@ public class GameManager : MonoBehaviour
             towelProgressText.enabled = true;
             groomProgressText.enabled = true;
 
+            washProgressBar.SetActive(false);
+            washGreenBar.SetActive(false);
+            shampooProgressBar.SetActive(false);
+            shampooGreenBar.SetActive(false);
+
+            towelProgressBar.SetActive(true);
+            towelGreenBar.SetActive(true);
+            groomProgressBar.SetActive(true);
+            groomGreenBar.SetActive(true);
+
             //backButton.enabled = true;
         }
         //logic for any further step switches goes here
@@ -139,6 +162,16 @@ public class GameManager : MonoBehaviour
             shampooProgressText.enabled = true;
             towelProgressText.enabled = false;
             groomProgressText.enabled = false;
+
+            washProgressBar.SetActive(true);
+            washGreenBar.SetActive(true);
+            shampooProgressBar.SetActive(true);
+            shampooGreenBar.SetActive(true);
+
+            towelProgressBar.SetActive(false);
+            towelGreenBar.SetActive(false);
+            groomProgressBar.SetActive(false);
+            groomGreenBar.SetActive(false);
 
         }
     }
