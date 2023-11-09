@@ -18,6 +18,8 @@ public class Tool : MonoBehaviour
     [SerializeField] BoxCollider2D catCollider;
 
     [SerializeField] TextMeshProUGUI progressText;
+    [SerializeField] float greenBarScaleX = 0.5646009f;
+    [SerializeField] GameObject greenBar;
     [SerializeField] TextMeshProUGUI currStepCompleteText;
     [SerializeField] TextMeshProUGUI gameCompleteText;
     [SerializeField] GameObject playAgainButton;
@@ -38,6 +40,8 @@ public class Tool : MonoBehaviour
         currStepCompleteText.enabled = false;
         gameCompleteText.enabled = false;
         playAgainButton.SetActive(false);
+
+        greenBar.SetActive(false);
 
         //toolBounds = toolCollider.bounds;
         //toolBounds.extents += 10;
@@ -84,8 +88,27 @@ public class Tool : MonoBehaviour
                 }
 
                 //implement logic for each tool use here
-                if (toolUseCount == 4)
+                if (toolUseCount == 1)
                 {
+                    greenBar.SetActive(true);
+                    progressText.text = "25% Complete";
+                }
+                else if (toolUseCount == 2)
+                {
+                    greenBar.transform.localScale += new Vector3(greenBarScaleX, 0, 0);
+                    greenBar.transform.position += new Vector3(greenBarScaleX - 0.05f, 0, 0);
+                    progressText.text = "50% Complete";
+                }
+                else if (toolUseCount == 3)
+                {
+                    greenBar.transform.localScale += new Vector3(greenBarScaleX, 0, 0);
+                    greenBar.transform.position += new Vector3(greenBarScaleX - 0.05f, 0, 0);
+                    progressText.text = "75% Complete";
+                }
+                else if (toolUseCount == 4)
+                {
+                    greenBar.transform.localScale += new Vector3(greenBarScaleX, 0, 0);
+                    greenBar.transform.position += new Vector3(greenBarScaleX - 0.05f, 0, 0);
                     progressText.text = "100% Complete";
                     if (this.tag == "WaterBucket")
                     {
