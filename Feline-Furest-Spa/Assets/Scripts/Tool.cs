@@ -121,7 +121,7 @@ public class Tool : MonoBehaviour
                     else if (this.tag == "ShampooBottle")
                     {
                         gameManager.SetProgress("ShampooBottle", true);
-                        StartCoroutine(ShowAndHideText(currStepCompleteText, 3.0f));
+                        //StartCoroutine(ShowAndHideText(currStepCompleteText, 3.0f));
                     }
                     else if (this.tag == "Towel")
                     {
@@ -130,7 +130,7 @@ public class Tool : MonoBehaviour
                     else if (this.tag == "Flower")
                     {
                         gameManager.SetProgress("Flower", true);
-                        StartCoroutine(ShowAndHideText(currStepCompleteText, 3.0f));
+                        //StartCoroutine(ShowAndHideText(currStepCompleteText, 3.0f));
                         gameCompleteText.enabled = true;
                         gameCompleteBkg.SetActive(true);
                         playAgainButton.SetActive(true);
