@@ -29,6 +29,8 @@ public class Tool : MonoBehaviour
 
     [SerializeField] Animator catAnimator;
 
+    
+
     //Bounds toolBounds;
     //Bounds squareBounds;
 
@@ -44,6 +46,8 @@ public class Tool : MonoBehaviour
         gameCompleteText.enabled = false;
         gameCompleteBkg.SetActive(false);
         playAgainButton.SetActive(false);
+
+        
 
         //greenBar.SetActive(false);
 
@@ -150,6 +154,8 @@ public class Tool : MonoBehaviour
         yield return new WaitForSeconds(time);
         text.enabled = false;
     }
+
+    
 
 
 }
