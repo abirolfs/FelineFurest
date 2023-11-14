@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] bool isTowelDone = false;
     [SerializeField] bool isGroomDone = false;
-    //public bool isStep2Done = false;
 
     [SerializeField] TextMeshProUGUI tool1Text;
     [SerializeField] TextMeshProUGUI tool2Text;
@@ -39,15 +38,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject groomProgressBar;
     [SerializeField] GameObject groomGreenBar;
 
-    //[SerializeField] GameObject backButton;
-    //[SerializeField] GameObject nextButton;
-
     // Start is called before the first frame update
     void Start()
     {
         towel.SetActive(false);
         flower.SetActive(false);
-        //backButton.GetComponent<Button>().enabled = false;
 
         towelProgressText.enabled = false;
         groomProgressText.enabled = false;
@@ -102,7 +97,6 @@ public class GameManager : MonoBehaviour
         {
             return true;
         }
-        //IMPLEMENT LOGIC FOR STEP 2 HERE
         else
         {
             return false;
@@ -139,9 +133,8 @@ public class GameManager : MonoBehaviour
             groomProgressBar.SetActive(true);
             groomGreenBar.SetActive(true);
 
-            //backButton.enabled = true;
         }
-        //logic for any further step switches goes here
+        
     }
 
     public void GoBackToLastStep()
@@ -181,22 +174,5 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    //public void SwitchTools()
-    //{
-    //    if (isOnShowerStep)
-    //    {
-    //        isOnShowerStep = false;
-    //        waterBucket.SetActive(false);
-    //        shampooBottle.SetActive(false);
-    //        towel.SetActive(true);
-    //        //backButton.enabled = true;
-    //    }
-    //    else
-    //    {
-    //        isOnShowerStep = true;
-    //        waterBucket.SetActive(true);
-    //        shampooBottle.SetActive(true);
-    //        towel.SetActive(false);
-    //    }
-    //}
+  
 }

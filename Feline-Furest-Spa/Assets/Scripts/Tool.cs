@@ -3,6 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/* Assets used:
+
+    Pet Cats Pack by luizmelo on itch.io: https://luizmelo.itch.io/pet-cat-pack
+
+    Forest road Background by momit on the Unity Asset Store: https://assetstore.unity.com/packages/2d/textures-materials/forest-road-background-146496
+
+    Forest Ambience by TinyWorlds on opengameart.org: https://opengameart.org/content/forest-ambience
+
+    Kenney's Roguelike/RPG pack: https://kenney.nl/assets/roguelike-rpg-pack
+
+    Kenney's UI pack: https://kenney.nl/assets/ui-pack
+
+    ** Cat meow audio credited in CatAudio script **
+
+*/
+
 public class Tool : MonoBehaviour
 {
     [SerializeField] int toolUseCount = 0;
@@ -13,7 +29,7 @@ public class Tool : MonoBehaviour
 
     [SerializeField] GameObject toolSquare;
     [SerializeField] GameObject cat;
-    [SerializeField] BoxCollider2D toolCollider;
+    
     [SerializeField] BoxCollider2D squareCollider;
     [SerializeField] BoxCollider2D catCollider;
 
@@ -37,7 +53,6 @@ public class Tool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        toolCollider = this.GetComponent<BoxCollider2D>();
         squareCollider = toolSquare.GetComponent<BoxCollider2D>();
         cat = GameObject.FindGameObjectWithTag("Cat");
         catCollider = cat.GetComponent<BoxCollider2D>();
@@ -47,12 +62,6 @@ public class Tool : MonoBehaviour
         gameCompleteBkg.SetActive(false);
         playAgainButton.SetActive(false);
 
-        
-
-        //greenBar.SetActive(false);
-
-        //toolBounds = toolCollider.bounds;
-        //toolBounds.extents += 10;
     }
 
     // Update is called once per frame
@@ -86,7 +95,6 @@ public class Tool : MonoBehaviour
         //logic for the tool being clicked outside of toolsquare - AKA actually using the tool
         else
         {
-
             if (catCollider.bounds.Contains(new Vector3(mousePosition.x, mousePosition.y, cat.transform.position.z)))
             {
                 Debug.Log("Used tool on cat!");
@@ -98,7 +106,6 @@ public class Tool : MonoBehaviour
                 //implement logic for each tool use here
                 if (toolUseCount == 1)
                 {
-                    //have to change the setactive to just setting the scale, then make scale 0 in start
                     greenBar.transform.localScale += new Vector3(greenBarScaleX, 0, 0);
                     greenBar.transform.position += new Vector3(greenBarScaleX - 0.05f, 0, 0);
                     progressText.text = "25% Complete";
@@ -128,7 +135,6 @@ public class Tool : MonoBehaviour
                     else if (this.tag == "ShampooBottle")
                     {
                         gameManager.SetProgress("ShampooBottle", true);
-                        //StartCoroutine(ShowAndHideText(currStepCompleteText, 3.0f));
                     }
                     else if (this.tag == "Towel")
                     {
@@ -137,7 +143,6 @@ public class Tool : MonoBehaviour
                     else if (this.tag == "Flower")
                     {
                         gameManager.SetProgress("Flower", true);
-                        //StartCoroutine(ShowAndHideText(currStepCompleteText, 3.0f));
                         gameCompleteText.enabled = true;
                         gameCompleteBkg.SetActive(true);
                         playAgainButton.SetActive(true);
@@ -146,13 +151,6 @@ public class Tool : MonoBehaviour
             }
 
         }
-    }
-
-    IEnumerator ShowAndHideText(TextMeshProUGUI text, float time)
-    {
-        text.enabled = true;
-        yield return new WaitForSeconds(time);
-        text.enabled = false;
     }
 
     
