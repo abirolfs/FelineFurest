@@ -27,6 +27,8 @@ public class Tool : MonoBehaviour
 
     [SerializeField] GameManager gameManager;
 
+    [SerializeField] Animator catAnimator;
+
     //Bounds toolBounds;
     //Bounds squareBounds;
 
@@ -111,6 +113,7 @@ public class Tool : MonoBehaviour
                 }
                 else if (toolUseCount == 4)
                 {
+                    catAnimator.SetTrigger("ActivateMeow");
                     greenBar.transform.localScale += new Vector3(greenBarScaleX, 0, 0);
                     greenBar.transform.position += new Vector3(greenBarScaleX - 0.05f, 0, 0);
                     progressText.text = "100% Complete";

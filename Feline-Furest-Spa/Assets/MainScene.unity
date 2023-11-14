@@ -1771,6 +1771,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5256115866344124504, guid: eeba5a78e2b0f4627aa79f846b540781, type: 3}
   m_PrefabInstance: {fileID: 2729482027683250832}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &781451251 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2717081406448299902, guid: d89fbd189531c4c55b66f4cda50ca0dc, type: 3}
+  m_PrefabInstance: {fileID: 731681315853691863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &789238017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2341147342400483637, guid: 7a1657a3a03734afc98918e4cbd04125, type: 3}
@@ -4405,6 +4410,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 345477145}
     - target: {fileID: 7474463103671317128, guid: eeba5a78e2b0f4627aa79f846b540781, type: 3}
+      propertyPath: catAnimator
+      value: 
+      objectReference: {fileID: 781451251}
+    - target: {fileID: 7474463103671317128, guid: eeba5a78e2b0f4627aa79f846b540781, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1743260310}
@@ -4511,6 +4520,10 @@ PrefabInstance:
       propertyPath: toolSquare
       value: 
       objectReference: {fileID: 789238017}
+    - target: {fileID: 1019224162153096355, guid: ea07a91380ce14883bdd54e2c57c9f72, type: 3}
+      propertyPath: catAnimator
+      value: 
+      objectReference: {fileID: 781451251}
     - target: {fileID: 1019224162153096355, guid: ea07a91380ce14883bdd54e2c57c9f72, type: 3}
       propertyPath: gameManager
       value: 
@@ -4703,6 +4716,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 789238017}
     - target: {fileID: 5338787183496290145, guid: 4ffd503b1d9eb4204bdbb8e9f3d020e5, type: 3}
+      propertyPath: catAnimator
+      value: 
+      objectReference: {fileID: 781451251}
+    - target: {fileID: 5338787183496290145, guid: 4ffd503b1d9eb4204bdbb8e9f3d020e5, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1743260310}
@@ -4751,6 +4768,10 @@ PrefabInstance:
       propertyPath: toolSquare
       value: 
       objectReference: {fileID: 345477145}
+    - target: {fileID: 1209923980467618675, guid: 19b9f5faac25c45e2a3decab867ca644, type: 3}
+      propertyPath: catAnimator
+      value: 
+      objectReference: {fileID: 781451251}
     - target: {fileID: 1209923980467618675, guid: 19b9f5faac25c45e2a3decab867ca644, type: 3}
       propertyPath: gameManager
       value: 
